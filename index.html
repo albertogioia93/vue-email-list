@@ -15,10 +15,25 @@
     <!-- questo div id=app si collega all'istanza finalizzata da mount('#app') creata in main.js -->
 
     <div id="app">
-        <ul>
+
+        <!-- <ul>
            <li v-for="email in emails" :key="email">{{ email }}</li>
-        </ul>
+        </ul> -->
+
+        <!-- BONUS COLLEGATO A PARTIRE DA RIGA 31 DI main.js-->
+    
+        <template v-if="emailsGenerated">
+        <!-- solo se la lista di email in main.js diventa true, viene stampata -->
+            <ul>
+              <li v-for="email in emails" :key="email">{{ email }}</li>
+            </ul>
+        </template>
+        <template v-else>
+            <p>Generazione degli indirizzi email in corso...</p>
+        </template>
+
     </div>
+
 
 
 
